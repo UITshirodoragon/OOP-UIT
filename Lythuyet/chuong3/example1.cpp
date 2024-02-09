@@ -89,6 +89,7 @@ int main()
     Point c;
 
     a.display();
+    b.display();
     
 
     return 0;
