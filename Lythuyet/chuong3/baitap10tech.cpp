@@ -31,6 +31,10 @@ class DoanhNghiep
         friend bool cmp(DoanhNghiep a, DoanhNghiep b);
         friend void input(DoanhNghiep &);
         friend void output(DoanhNghiep);
+        int getSoluong()
+        {
+            return this -> SoluongSV;
+        }
         ~DoanhNghiep();
 };
 
@@ -78,7 +82,7 @@ void output(DoanhNghiep a)
 
 int main()
 {
-    int n;
+    int n,a,b;
     vector<DoanhNghiep> vDN;
 
     cin >> n;
@@ -90,11 +94,15 @@ int main()
         cin.ignore();
         vDN.push_back(x);
     }
-
+    cin >> a >> b;
     sort(vDN.begin(), vDN.end(), cmp);
 
     for(DoanhNghiep x : vDN)
     {
-        cout << x;
+        if(x.getSoluong() >= a && x.getSoluong() <= b)
+        {
+            cout << x;
+        }
+        
     }
 }
